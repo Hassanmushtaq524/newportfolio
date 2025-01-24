@@ -49,7 +49,6 @@ const Navbar = () => {
     // Revert animation
     gsap.to(`#item-${index}`, {
       width: "4rem",
-
       duration: 0.8
     });
   };
@@ -66,9 +65,9 @@ const Navbar = () => {
             key={i}
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={() => handleMouseLeave(i)}
-            className="w-16 border-[0.5px] border-secondary flex-center p-4 text-secondary text-sm h-40 overflow-hidden cursor-pointer"
+            className="w-16 border-[0.5px] border-secondary flex-center p-4 text-secondary text-sm h-40 overflow-hidden"
           >
-            <a href={x.href} className={`text-center -rotate-90 ${(hoveredItem === i) ? 'font-bold !rotate-0' : ''}`} style={{ whiteSpace: "nowrap" }}>
+            <a href={x.href} className={`cursor-none text-center -rotate-90 ${(hoveredItem === i) ? 'font-bold !rotate-0' : ''}`} style={{ whiteSpace: "nowrap" }}>
               {hoveredItem === i ? x.openText : x.text}
             </a>
           </div>

@@ -100,7 +100,9 @@ const Home = () => {
                     I AM <br/> HASSAN
                 </h1>
             </div>   
-        
+
+            {/* Top right text */}
+            
 
         </div>
     )
