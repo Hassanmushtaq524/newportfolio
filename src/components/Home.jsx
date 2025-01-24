@@ -7,6 +7,7 @@ const Home = () => {
     const mainTitleRef = useRef(null);
     const nameTitleRef = useRef(null);
     const mainImgRef = useRef(null);
+    const rightTextRef = useRef(null);
     const [visible, setVisible] = useState(true);
 
 
@@ -29,27 +30,33 @@ const Home = () => {
             .to(mainTitleRef.current, {
                 y: mainTitleRect.height,
                 duration: 1,
-                ease: 'power3.inOut',
                 onComplete: () => setVisible(false),
             })
             .from(nameTitleRef.current, {
                 x: -nameTitleRect.width * 1.5,
                 duration: 1,
-                ease: 'power3.inOut',
             });
         });
 
         return () => ctx.revert();
     }, []);
 
+
+
     /**
      * Fade-in effect for other stuff
      */
     useLayoutEffect(() => {
-        if (!mainImgRef.current) return;
+        if (!mainImgRef.current || !rightTextRef.current) return;
         const DELAY = 3;
         const ctx = gsap.context(() => {
             gsap.from(mainImgRef.current, {
+                opacity: 0,
+                duration: 1.5,
+                delay: DELAY,
+                ease: 'power3.inOut',
+            });
+            gsap.from(rightTextRef.current, {
                 opacity: 0,
                 duration: 1.5,
                 delay: DELAY,
@@ -59,6 +66,9 @@ const Home = () => {
         });
         return () => ctx.revert();
     }, []);
+
+
+
 
     return (
         <div id="home" className="relative h-dvh w-screen font-black bg-primary flex-center overflow-hidden">
@@ -75,12 +85,23 @@ const Home = () => {
                 <img src="/assets/img/MyImg.png" alt="my-img" className="size-fit object-cover"/>
             </div>
                
-            {/* name */}
-            <h1 ref={nameTitleRef} className="absolute z-10 text-secondary font-black lg:text-[12rem] md:text-[6rem] text-[4rem]  leading-[0.75] bottom-0 left-0">
-                I AM <br/> HASSAN
-            </h1>
+
+            <div className="w-full h-fit t lg:w-fit lg:h-fit absolute z-10 
+                            text-secondary
+                            bottom-0 left-0 lg:-bottom-8 lg:-left-2 
+                            overflow-hidden">
+                {/* right text */}
+                <p ref={rightTextRef} className="absolute top-0 right-0 text-right">
+                    <span className="text-sm md:text-lg font-thin">hhmushtaq@owu.edu<br/></span>
+                    <span className="text-sm md:text-2xl font-bold ">Coder. Designer.</span>
+                </p>
+                {/* name */}
+                <h1 ref={nameTitleRef} className="relative text-secondary font-black lg:text-[14rem] md:text-[6rem] text-[4rem] leading-[0.75]">
+                    I AM <br/> HASSAN
+                </h1>
+            </div>   
         
-        
+
         </div>
     )
 }
