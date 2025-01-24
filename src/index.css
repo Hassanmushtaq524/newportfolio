@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@layer base {
+  @font-face {
+    font-family: 'HelveticaNeueLTStd-BdEx';
+    src: url('/public/assets/fonts/HelveticaNeueLTStd-BdEx.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HelveticaNeueLTStd-HvEx';
+    src: url('/public/assets/fonts/HelveticaNeueLTStd-HvEx.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HelveticaNeueLTStd-ThEx';
+    src: url('/public/assets/fonts/HelveticaNeueLTStd-ThEx.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
