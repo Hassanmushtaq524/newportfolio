@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const CurrentDate = () => {
+const CurrentDate = ({ className }) => {
   const [time, setTime] = useState(() => new Date().toUTCString()); // Initialize with current UTC time
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const CurrentDate = () => {
   }, []);
 
   return (
-    <p className="text-xs">
+    <p className={className}>
       {time}
     </p>
   );

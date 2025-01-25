@@ -22,7 +22,7 @@ function App() {
   window.addEventListener('mousemove', handleMouseMove);
 
   return (
-    <div id="" className="relative h-dvh w-dvw bg-secondary">
+    <div id="" className="relative h-dvh w-screen bg-secondary overflow-hidden">
       <div id="cursor" className="absolute z-[10] bg-maroon size-5 bg-blend-difference" />
       <Navbar/>
       <Routes>

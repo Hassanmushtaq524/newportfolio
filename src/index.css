@@ -47,4 +47,20 @@ code {
   .flex-center {
     @apply flex items-center justify-center;
   }
+
+  .para {
+    @apply text-lg
+  }
+
+  .sub-heading {
+    @apply text-2xl
+  }
+
+  .heading {
+    @apply text-3xl
+  }
+
+  .display {
+    @apply text-5xl
+  }
 }
