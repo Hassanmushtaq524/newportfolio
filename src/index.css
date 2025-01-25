@@ -25,19 +25,19 @@ code {
 @layer base {
   @font-face {
     font-family: 'HelveticaNeueLTStd-BdEx';
-    src: url('/public/assets/fonts/HelveticaNeueLTStd-BdEx.otf') format('opentype');
+    src: url('./assets/fonts/HelveticaNeueLTStd-BdEx.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'HelveticaNeueLTStd-HvEx';
-    src: url('/public/assets/fonts/HelveticaNeueLTStd-HvEx.otf') format('opentype');
+    src: url('./assets/fonts/HelveticaNeueLTStd-HvEx.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'HelveticaNeueLTStd-ThEx';
-    src: url('/public/assets/fonts/HelveticaNeueLTStd-ThEx.otf') format('opentype');
+    src: url('./assets/fonts/HelveticaNeueLTStd-ThEx.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
