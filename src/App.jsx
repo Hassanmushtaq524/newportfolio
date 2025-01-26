@@ -10,20 +10,24 @@ import { useEffect } from 'react';
 
 function App() {
   
-  function handleMouseMove(event) {
-    const el = document.querySelector("#cursor");
-    if (!el) return;
-    gsap.to(el, {
-      x: event.clientX - (el.getBoundingClientRect().width / 2),
-      y: event.clientY - (el.getBoundingClientRect().height / 2),
-      duration: 0.5
-    })
-  }
-  window.addEventListener('mousemove', handleMouseMove);
+  /**
+   * TODO: uncomment and fix scroll issue later
+   */
+  // function handleMouseMove(event) {
+  //   const el = document.querySelector("#cursor");
+  //   if (!el) return;
+  //   gsap.to(el, {
+  //     x: event.clientX - (el.getBoundingClientRect().width / 2),
+  //     y: event.clientY - (el.getBoundingClientRect().height / 2),
+  //     duration: 0.5
+  //   })
+  // }
+  // window.addEventListener('mousemove', handleMouseMove);
+
 
   return (
     <div id="" className="relative h-dvh w-screen bg-secondary overflow-hidden">
-      <div id="cursor" className="absolute z-[10] bg-maroon size-5 bg-blend-difference" />
+      {/* <div id="cursor" className="absolute z-[10] bg-maroon size-5 bg-blend-difference" /> */}
       <Navbar/>
       <Routes>
         <Route index element={<Home/>}/>

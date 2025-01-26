@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  cursor: none;
-}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -49,7 +47,7 @@ code {
   }
 
   .para {
-    @apply text-lg
+    @apply text-sm md:text-lg 
   }
 
   .sub-heading {

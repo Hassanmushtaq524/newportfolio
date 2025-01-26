@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useNavigate } from 'react-router-dom';
 import CurrentDate from './CurrentDate';
 import { useWindowSize } from 'react-use';
+import logo from "../assets/img/logo.svg";
 
 
 const items = [
@@ -154,6 +155,8 @@ const Navbar = () => {
         }
     }
 
+
+
     return (
         <>
             <div id="navbar" className="fixed z-50 right-0 top-0 w-fit h-full">
@@ -168,7 +171,7 @@ const Navbar = () => {
                             className="fixed top-0 left-0 size-full z-40 bg-primary flex flex-col items-center justify-center gap-12">
                             {items.map((x, i) => (
                             <div>
-                                <a onClick={() => handleClick(x.href)} className="text-3xl font-bold text-secondary">
+                                <a id={`item-${i}-a`} onClick={() => handleClick(x.href)} className="text-3xl font-bold text-secondary">
                                     {x.text}
                                 </a>
                             </div>
@@ -180,6 +183,8 @@ const Navbar = () => {
                     <nav
                         ref={navRef}
                         className="size-full flex flex-col items-end justify-start md:justify-center lg:justify-end gap-4 p-6 font-thin">
+                        {/* logo */}
+                        <img src={logo} className="w-fit hover:rotate-[-60deg] duration-500" onClick={() => handleClick("/")} alt='logo'/>
                         {/* items */}
                         {items.map((x, i) => (
                             <div
