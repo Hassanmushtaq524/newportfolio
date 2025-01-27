@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import linkedInIcon from '../assets/img/linkedin.svg';
 import githubIcon from '../assets/img/github.svg';
+import { useGSAP } from '@gsap/react';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import gsap from 'gsap';
+gsap.registerPlugin(ScrollTrigger)
 
 const skills = [
   { title: "React.js", desc: "1 YEAR"},
@@ -13,11 +17,54 @@ const skills = [
   { title: "Express.js", desc: "1 YEAR"}
 ]
 
+const FAQs = [
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHERE DO I SEE MYSELF IN 10 YEARS?", answer: "Idk"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"}
+]
+
 
 
 
 const About = () => {
+  const imgRef = useRef(null);
+
+
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const { height: h, y: y }  = document.querySelector("#reel").getBoundingClientRect();
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#reel-img", 
+          start: `center center`, 
+          end: `top+=${h} bottom`,
+          scrub: 0.5,
+          pin: true,
+          pinSpacing: true,
+          markers: true, 
+          scroller: "#about"
+        },
+      });
   
+      gsap.to("#reel-img", {
+        scale: 1.4,
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+
+
   return (
     <div id="about" className="h-dvh relative w-screen bg-primary flex flex-col overflow-x-hidden">
         {/* top left text */}
@@ -37,9 +84,9 @@ const About = () => {
         </div>
 
         {/* MAIN CONTAINER */}
-        <section id='main' className='h-fit md:h-full
+        <section id='main' className='md:h-full
                                   flex flex-col
-                                  md:grid md:grid-rows-6 md:grid-cols-6 gap-8 pt-36 p-[24px] pe-28'>
+                                  md:grid md:grid-rows-6 md:grid-cols-6 gap-8 pt-36 p-[24px] md:pe-28'>
           {/* img */}
           <div className='border-[0.5px] border-secondary overflow-hidden
                           min-w-[14rem] max-w-[24rem] min-h-[14rem] max-h-[30rem]
@@ -84,8 +131,9 @@ const About = () => {
             </p>
           </div>
         </section>
+        
         {/* TOP SKILLS */}
-        <section id="skills" className="h-fit w-screen p-[24px] pe-28 text-end">
+        <section id="skills" className="h-fit w-screen p-[24px] md:pe-28 text-end">
           <h3 className="text-lg font-bold text-secondary mb-4">TOP SKILLS</h3>
           <div className="flex flex-wrap md:flex-row gap-4 items-center justify-end">
             {skills.map((x, i) => (
@@ -96,6 +144,22 @@ const About = () => {
             ))}
           </div>
         </section>  
+
+        {/* REEL */}
+        <section id="reel" className='w-screen px-[24px] py-32 md:pe-28 text-end flex flex-row items-start justify-center gap-8 md:gap-24'>
+            {/* FAQs */}
+            <div id="faq" className="flex flex-col gap-24">
+              {FAQs.map((x, i) => (
+                <div className="">
+                    <h3 className="text-lg font-bold text-secondary mb-2">{x.question}</h3>
+                    <p className='text-sm font-thin text-secondary'>{x.answer}</p>
+                </div>
+              ))}
+            </div>
+            {/* img */}
+            <div id="reel-img" className='w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary'>
+            </div>
+        </section>
     </div>
   )
 }
