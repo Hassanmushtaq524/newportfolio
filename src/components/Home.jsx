@@ -122,17 +122,17 @@ const Home = () => {
             <div ref={topRightTextRef} className="absolute w-96 md:top-[24px] md:right-[24px] md:text-end text-center text-secondary">
                 <p className="font-thin text-xs md:text-lg">
                     Enthusiastic front-end developer and designer, learning through personal projects and exploration 
-                    <CurrentDate/>
+                    <CurrentDate className={"font-thin text-xs text-light-gray"} />
                 </p>
             </div>
             
             {/* Icons */}
             <div ref={iconsRef} className="absolute top-[24px] left-[24px] size-fit flex flex-col items-start md:flex-row gap-4">
-                <img className="size-12 z-[100] hover:rotate-[-60deg] duration-500" 
+                <img className="size-12 z-50 hover:rotate-[-60deg] duration-500" 
                      src={linkedInIcon} 
                      onClick={() => window.location.href = 'https://www.linkedin.com/in/hassan-mushtaq-3a5143230/'}  
                      alt="linkedin" />
-                <img className="size-12 z-[100] hover:rotate-[-60deg] duration-500" 
+                <img className="size-12 z-50 hover:rotate-[-60deg] duration-500" 
                      src={githubIcon} 
                      onClick={() => window.location.href = 'https://github.com/HassanMushtaq524'} 
                      alt="github" />

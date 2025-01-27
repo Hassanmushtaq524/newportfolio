@@ -10,6 +10,9 @@ import { useEffect } from 'react';
 
 function App() {
   
+  /**
+   * TODO: uncomment and fix scroll issue later
+   */
   function handleMouseMove(event) {
     const el = document.querySelector("#cursor");
     if (!el) return;
@@ -21,9 +24,10 @@ function App() {
   }
   window.addEventListener('mousemove', handleMouseMove);
 
+
   return (
-    <div id="" className="relative h-dvh w-dvw bg-secondary">
-      <div id="cursor" className="absolute z-[10] bg-maroon size-5 bg-blend-difference" />
+    <div id="" className="relative h-dvh w-screen bg-secondary overflow-hidden">
+      <div id="cursor" className="absolute z-[10] bg-maroon size-5 bg-blend-difference" style={{ pointerEvents: "none" }}/>
       <Navbar/>
       <Routes>
         <Route index element={<Home/>}/>

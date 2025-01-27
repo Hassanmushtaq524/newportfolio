@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  cursor: none;
-}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,6 +18,14 @@ code {
 }
 
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 
 @layer base {
@@ -46,5 +52,21 @@ code {
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;
+  }
+
+  .para {
+    @apply text-sm md:text-lg 
+  }
+
+  .sub-heading {
+    @apply text-2xl
+  }
+
+  .heading {
+    @apply text-3xl
+  }
+
+  .display {
+    @apply text-5xl
   }
 }
