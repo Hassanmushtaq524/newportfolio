@@ -1,11 +1,21 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useState, useLayoutEffect, useRef } from 'react'
 import linkedInIcon from '../assets/img/linkedin.svg';
 import githubIcon from '../assets/img/github.svg';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
+import img1 from '../assets/img/faq-img-1.jpg'
+import img2 from '../assets/img/faq-img-2.jpg'
+import img3 from '../assets/img/faq-img-3.jpg'
+import img4 from '../assets/img/faq-img-4.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
+
+
+/**
+ * Skills list
+ */
 const skills = [
   { title: "React.js", desc: "1 YEAR"},
   { title: "GSAP", desc: "1 YEAR"},
@@ -17,6 +27,11 @@ const skills = [
   { title: "Express.js", desc: "1 YEAR"}
 ]
 
+
+
+/**
+ * FAQs list
+ */
 const FAQs = [
   { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
   { question: "WHERE DO I SEE MYSELF IN 10 YEARS?", answer: "Idk"},
@@ -33,12 +48,57 @@ const FAQs = [
 
 
 
+/**
+ * Img list
+ */
+const imgs = [ img1, img2, img3, img4 ]
+
 
 const About = () => {
   const imgRef = useRef(null);
+  const [scrollingImg, setScrollingImg] = useState(false);
+  const [prevY, setPrevY] = useState(0);
+  const [ imgIdx, setImgIdx ] = useState(1);
+  const [scrollY, setScrollY] = useState(0);
+
+  /**
+   * Scrolling listener on the about page
+   */
+  useEffect(() => {
+    const container = document.querySelector("#about") || window;
+    function handleScroll() {
+      setScrollY(container.scrollTop || window.scrollY);
+    }
+  
+    container.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
 
+  /**
+   * For images reel
+   */
+  useEffect(() => {
+    if (!scrollingImg) return;
+    if (scrollY - prevY > 200) {
+      setPrevY(scrollY);
+      setImgIdx((prev) => (prev + 1) % imgs.length);
+    }
+    if (scrollY - prevY < -200) {
+      setPrevY(scrollY);
+      setImgIdx((prev) => (prev - 1) < 0 ? imgs.length - 1 : prev - 1);
+    }
+  }, [scrollingImg, scrollY, prevY])
+
+
+
+  /**
+   * Img pinning 
+   */
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const { height: h, y: y }  = document.querySelector("#reel").getBoundingClientRect();
@@ -47,15 +107,18 @@ const About = () => {
           trigger: "#reel-img", 
           start: `center center`, 
           end: `top+=${h} bottom`,
-          scrub: 0.5,
+          scrub: 1,
           pin: true,
           pinSpacing: true,
           markers: true, 
           scroller: "#about"
         },
+        onStart: () => setScrollingImg(true),
+        onComplete: () => setScrollingImg(false),
+        onReverseComplete: () => setScrollingImg(false)
       });
   
-      gsap.to("#reel-img", {
+      tl.to("#reel-img", {
         scale: 1.4,
       });
     });
@@ -157,7 +220,8 @@ const About = () => {
               ))}
             </div>
             {/* img */}
-            <div id="reel-img" className='w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary'>
+            <div id="reel-img" className='w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
+              <img src={imgs[imgIdx]} alt="reel-img" className="object-cover" />
             </div>
         </section>
     </div>
