@@ -110,7 +110,6 @@ const About = () => {
           scrub: 1,
           pin: true,
           pinSpacing: true,
-          markers: true, 
           scroller: "#about"
         },
         onStart: () => setScrollingImg(true),
@@ -210,6 +209,10 @@ const About = () => {
 
         {/* REEL */}
         <section id="reel" className='w-screen px-[24px] py-32 md:pe-28 text-end flex flex-row items-start justify-center gap-8 md:gap-24'>
+            {/* img */}
+            <div id="reel-img" className='md:relative w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
+              <img src={imgs[imgIdx]} alt="reel-img" className="object-cover" />
+            </div>
             {/* FAQs */}
             <div id="faq" className="flex flex-col gap-24">
               {FAQs.map((x, i) => (
@@ -219,11 +222,15 @@ const About = () => {
                 </div>
               ))}
             </div>
-            {/* img */}
-            <div id="reel-img" className='w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
-              <img src={imgs[imgIdx]} alt="reel-img" className="object-cover" />
-            </div>
         </section>
+
+        {/* ENDING FOOTER */}
+        <footer id="info" className="h-dvh w-screen flex flex-row justify-between p-[24px] pe-28 border-t-[0.5px] border-secondary">
+              <div className="size-full text-start text-secondary">
+                <h3 className='font-bold text-lg'>LET'S CONNECT!</h3>
+                <a href="mailto:hhmushtaq@owu.edu" className="font-thin text-sm">hhmushtaq@owu.edu /</a>
+              </div>
+        </footer>
     </div>
   )
 }
