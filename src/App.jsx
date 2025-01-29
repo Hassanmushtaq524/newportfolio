@@ -6,10 +6,11 @@ import Work from './components/Work';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import gsap from 'gsap';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   
+  const [ innerText, setInnerText ] = useState(null);
   /**
    * TODO: uncomment and fix scroll issue later
    */
@@ -27,11 +28,13 @@ function App() {
 
   return (
     <div id="" className="relative h-dvh w-screen bg-secondary overflow-hidden">
-      <div id="cursor" className="absolute z-[10] bg-maroon size-5 bg-blend-difference" style={{ pointerEvents: "none" }}/>
+      <div id="cursor" className="absolute z-[10] p-2 bg-maroon bg-blend-difference size-fit" style={{ pointerEvents: "none" }}>
+        <h1 className="font-bold text-primary">{ innerText }</h1>
+      </div>
       <Navbar/>
       <Routes>
         <Route index element={<Home/>}/>
-        <Route path='/work' element={<Work/>}/>
+        <Route path='/work' element={<Work setCursorText={setInnerText}/>}/>
         <Route path='/about' element={<About/>}/>
       </Routes>
     </div>

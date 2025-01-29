@@ -5,10 +5,14 @@ import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
-import img1 from '../assets/img/faq-img-1.jpg'
-import img2 from '../assets/img/faq-img-2.jpg'
-import img3 from '../assets/img/faq-img-3.jpg'
-import img4 from '../assets/img/faq-img-4.jpg'
+import aboutImg from "../assets/img/about-img-1.jpg";
+import img1 from '../assets/img/faq-img-1.jpg';
+import img2 from '../assets/img/faq-img-2.jpg';
+import img4 from '../assets/img/faq-img-4.jpg';
+import img3 from '../assets/img/faq-img-3.jpg';
+import img5 from '../assets/img/faq-img-5.jpg';
+import img6 from '../assets/img/faq-img-6.jpg';
+
 gsap.registerPlugin(ScrollTrigger)
 
 
@@ -38,11 +42,6 @@ const FAQs = [
   { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
   { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
   { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
   { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"}
 ]
 
@@ -51,7 +50,7 @@ const FAQs = [
 /**
  * Img list
  */
-const imgs = [ img1, img2, img3, img4 ]
+const imgs = [ img1, img2, img3, img4, img5, img6 ];
 
 
 const About = () => {
@@ -114,7 +113,7 @@ const About = () => {
         },
         onStart: () => setScrollingImg(true),
         onComplete: () => setScrollingImg(false),
-        onReverseComplete: () => setScrollingImg(false)
+        onReverseComplete: () => setScrollingImg(false),        
       });
   
       tl.to("#reel-img", {
@@ -134,8 +133,8 @@ const About = () => {
           ABOUT ME
         </h1>
         {/* top right stuff */}
-        <div className="fixed z-[100] top-[24px] right-[24px] size-fit flex flex-col items-end md:flex-row gap-4">
-          <img className="size-12  hover:rotate-[-60deg] duration-700" 
+        <div className="fixed z-50 top-[24px] right-[24px] size-fit flex flex-col items-end md:flex-row gap-4">
+          <img className="size-12 hover:rotate-[-60deg] duration-700" 
                 src={linkedInIcon} 
                 onClick={() => window.location.href = 'https://www.linkedin.com/in/hassan-mushtaq-3a5143230/'}  
                 alt="linkedin" />
@@ -153,7 +152,7 @@ const About = () => {
           <div className='border-[0.5px] border-secondary overflow-hidden
                           min-w-[14rem] max-w-[24rem] min-h-[14rem] max-h-[30rem]
                           md:col-span-2 md:row-span-6 md:h-full'>
-            <img></img>
+            <img src={aboutImg} className="object-cover size-full" />
           </div>
           {/* main text */}
           <div className='md:col-start-4 md:col-span-3 md:row-span-2 text-end'>
@@ -209,18 +208,18 @@ const About = () => {
 
         {/* REEL */}
         <section id="reel" className='w-screen px-[24px] py-32 md:pe-28 text-end flex flex-row items-start justify-center gap-8 md:gap-24'>
-            {/* img */}
-            <div id="reel-img" className='md:relative w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
-              <img src={imgs[imgIdx]} alt="reel-img" className="object-cover" />
-            </div>
             {/* FAQs */}
-            <div id="faq" className="flex flex-col gap-24">
+            <div id="faq" className="flex flex-col gap-44">
               {FAQs.map((x, i) => (
                 <div className="">
                     <h3 className="text-lg font-bold text-secondary mb-2">{x.question}</h3>
                     <p className='text-sm font-thin text-secondary'>{x.answer}</p>
                 </div>
               ))}
+            </div>
+            {/* img */}
+            <div id="reel-img" className='md:relative w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
+              <img src={imgs[imgIdx]} alt="reel-img" className="object-cover w-full h-full" />
             </div>
         </section>
 
