@@ -8,11 +8,14 @@ import Navbar from './components/Navbar';
 import gsap from 'gsap';
 import { useEffect, useState } from 'react';
 
-function App() {
-  
+function App() {  
   const [ innerText, setInnerText ] = useState(null);
+
+
+
   /**
-   * TODO: uncomment and fix scroll issue later
+   * moving mouse for cursor 
+   * @returns 
    */
   function handleMouseMove(event) {
     const el = document.querySelector("#cursor");
@@ -20,12 +23,13 @@ function App() {
     gsap.to(el, {
       x: event.clientX - (el.getBoundingClientRect().width / 2),
       y: event.clientY - (el.getBoundingClientRect().height / 2),
-      duration: 0.5
+      duration: 1
     })
   }
   window.addEventListener('mousemove', handleMouseMove);
 
 
+  
   return (
     <div id="" className="relative h-dvh w-screen bg-secondary overflow-hidden">
       <div id="cursor" className="absolute z-[10] p-2 bg-maroon bg-blend-difference size-fit" style={{ pointerEvents: "none" }}>

@@ -6,89 +6,95 @@ import gsap from 'gsap';
  * Images
  */
 import longlegsImg from "../assets/img/work-img-longlegs.jpg";
-import thiswebsiteCoverImg from "../assets/img/thiswebsite-coverimg.png";
+import thiswebsiteCoverImg from "../assets/img/thiswebsite-coverimg.jpg";
+import animeforumCoverImg from "../assets/img/animeforum-coverimg.jpg";
+import zentryCoverImg from "../assets/img/zentry-coverimg.jpg";
+import amanahCoverImg from "../assets/img/amanah-coverimg.jpg";
+import coffeeologyCoverImg from "../assets/img/coffeeology-coverimg.jpg";
 
 
-/**
- * TODO: probably move this to another file
- */
+
 const workList = [
   {
     title: "THIS WEBSITE",
     coverImg: thiswebsiteCoverImg,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
-      { img: longlegsImg },
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
     ]
   },
   {
     title: "UI/UX & FRONTEND: ANIMEFORUM!",
-    coverImg: longlegsImg,
+    coverImg: animeforumCoverImg,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
-      { img: longlegsImg },
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
     ]
   },
   {
     title: "FRONTEND: ZENTRY REMAKE",
-    coverImg: longlegsImg,
+    coverImg: zentryCoverImg,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
-      { img: longlegsImg },
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
+    ]
+  },
+  {
+    title: "FRONTEND DESIGN: JOJI WEBSITE REDESIGN",
+    coverImg: null,
+    layout: [
+      { desc: ""},
+      { img: null },
     ]
   },
   {
     title: "LAYOUT DESIGN: AMANAH OUTSIDERS",
-    coverImg: longlegsImg,
+    coverImg: amanahCoverImg,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
-      { img: longlegsImg },
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
     ]
   },
   {
-    title: "MOVIE POSTER: YI YI",
-    coverImg: longlegsImg,
+    title: "RESEARCH: TRAFFIC MODELING",
+    coverImg: null,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
-      { img: longlegsImg },
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
+    ]
+  },
+  {
+    title: "BRANDING: COFFEEOLOGY",
+    coverImg: coffeeologyCoverImg,
+    layout: [
+      { desc: ""},
+      { img: null },
     ]
   },
   {
     title: "MOVIE POSTER: LONGLEGS",
     coverImg: longlegsImg,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
     ]
   },
   {
-    title: "FRONTEND DESIGN: JOJI WEBSITE REDESIGN",
+    title: "MOVIE POSTER: YI YI",
     coverImg: longlegsImg,
     layout: [
-      { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
-      { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie."},
-      { img: longlegsImg },
-      { img: longlegsImg },
-      { img: longlegsImg },
+      { desc: ""},
+      { img: null },
     ]
   },
-  
+  {
+    title: "TSHIRT DESIGNS: PERSONAL",
+    coverImg: longlegsImg,
+    layout: [
+      { desc: ""},
+      { img: null },
+    ]
+  }
 ]
 
 

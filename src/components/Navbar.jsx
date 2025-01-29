@@ -19,7 +19,7 @@ const Navbar = () => {
     const [hoveredItem, setHoveredItem] = useState(null); // Track hovered item
     const transitionRef = useRef(null);
     const navigate = useNavigate();
-    const { width: winWidth, height: winHeight } = useWindowSize();
+    const { width: winWidth } = useWindowSize();
     const [burger, setBurger] = useState(false);
     const boxRef = useRef(null);
     const [burgerOpen, setBurgerOpen] = useState(false);
