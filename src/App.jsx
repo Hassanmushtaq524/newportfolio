@@ -7,11 +7,17 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import gsap from 'gsap';
 import { useEffect, useState } from 'react';
+import { useWindowSize } from 'react-use';
 
 function App() {  
   const [ innerText, setInnerText ] = useState(null);
+  const { width: winWidth } = useWindowSize();
+  const [ mobileView, setMobileView ] = useState();
 
 
+  useEffect(() => {
+    setMobileView((winWidth < 800) ? true : false);
+  }, [])
 
   /**
    * moving mouse for cursor 
@@ -32,9 +38,11 @@ function App() {
   
   return (
     <div id="" className="relative h-dvh w-screen bg-secondary overflow-hidden">
-      <div id="cursor" className="absolute z-[10] p-2 bg-maroon bg-blend-difference size-fit" style={{ pointerEvents: "none" }}>
-        <h1 className="font-bold text-primary">{ innerText }</h1>
-      </div>
+      {!mobileView && 
+        <div id="cursor" className="absolute z-[10] p-2 bg-maroon bg-blend-difference size-fit" style={{ pointerEvents: "none" }}>
+          <h1 className="font-bold text-primary">{ innerText }</h1>
+        </div>
+      }
       <Navbar/>
       <Routes>
         <Route index element={<Home/>}/>

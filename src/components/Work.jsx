@@ -2,100 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import linkedInIcon from "../assets/img/linkedin.svg";
 import githubIcon from "../assets/img/github.svg";
 import gsap from 'gsap';
-/**
- * Images
- */
-import longlegsImg from "../assets/img/work-img-longlegs.jpg";
-import thiswebsiteCoverImg from "../assets/img/thiswebsite-coverimg.jpg";
-import animeforumCoverImg from "../assets/img/animeforum-coverimg.jpg";
-import zentryCoverImg from "../assets/img/zentry-coverimg.jpg";
-import amanahCoverImg from "../assets/img/amanah-coverimg.jpg";
-import coffeeologyCoverImg from "../assets/img/coffeeology-coverimg.jpg";
+import workList from './WorkList';
 
 
 
-const workList = [
-  {
-    title: "THIS WEBSITE",
-    coverImg: thiswebsiteCoverImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "UI/UX & FRONTEND: ANIMEFORUM!",
-    coverImg: animeforumCoverImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "FRONTEND: ZENTRY REMAKE",
-    coverImg: zentryCoverImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "FRONTEND DESIGN: JOJI WEBSITE REDESIGN",
-    coverImg: null,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "LAYOUT DESIGN: AMANAH OUTSIDERS",
-    coverImg: amanahCoverImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "RESEARCH: TRAFFIC MODELING",
-    coverImg: null,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "BRANDING: COFFEEOLOGY",
-    coverImg: coffeeologyCoverImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "MOVIE POSTER: LONGLEGS",
-    coverImg: longlegsImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "MOVIE POSTER: YI YI",
-    coverImg: longlegsImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  },
-  {
-    title: "TSHIRT DESIGNS: PERSONAL",
-    coverImg: longlegsImg,
-    layout: [
-      { desc: ""},
-      { img: null },
-    ]
-  }
-]
+
 
 
 
@@ -150,7 +61,7 @@ const Work = ({ setCursorText, ...rest }) => {
       <div className="max-w-[56rem] h-screen flex flex-wrap gap-4 overflow-y-scroll scrollbar-hidden pt-32">
         {workList.map((x, i) => {
           return (
-            <div className={`border-[0.5px] border-secondary overflow-hidden size-[24rem]`} key={i}
+            <div className="border-[0.5px] border-secondary overflow-hidden size-[18rem] md:size-[24rem]" key={i}
                  onMouseEnter={() => setCursorText(x.title)}
                  onMouseLeave={() => setCursorText(null)}
                  onClick={() => {setSelected(true); setSelectedIdx(i);}}>
@@ -164,15 +75,32 @@ const Work = ({ setCursorText, ...rest }) => {
           <div className="size-[50rem] bg-primary border-secondary border-[0.5px] text-start p-4 gap-16 overflow-scroll scrollbar-hidden">
             <h2 className="font-bold text-lg">{workList[selectedIdx].title}</h2>
             {workList[selectedIdx].layout.map((x, i) => {
-                return (x.hasOwnProperty('desc')) ?
-                  <div key={i} className='text-sm font-thin mt-16'>
-                    {x.desc}
-                  </div>
-                  :
-                  <div key={i} className='overflow-hidden size-[20rem] border-[0.5px] border-secondary mt-16'>
-                    <img src={x.img} className="object-cover w-full h-full"/>
-                  </div>
-            })}
+                return (
+                  <>
+                  {x.hasOwnProperty('desc') &&
+                    <div key={i} className='text-sm font-thin mt-16'>
+                      {x.desc}
+                    </div>
+                  }
+                  {x.hasOwnProperty('el') &&
+                    <div key={i} className='text-sm font-thin mt-16'>
+                      {x.el}
+                    </div>
+                  }
+                  {x.hasOwnProperty('img') &&
+                    <div key={i} className='overflow-hidden w-[85%] border-[0.5px] border-secondary mt-16'>
+                      <img src={x.img} className="object-cover w-full"/>
+                    </div>
+                  }
+                  {x.hasOwnProperty('vid') &&
+                    <div key={i} className='overflow-hidden w-[85%] border-[0.5px] border-secondary mt-16'>
+                      <video src={x.vid} autoPlay loop muted className="object-cover w-full"/>
+                    </div>
+                  }
+                  </>
+                )
+              })
+            }
           </div>
         </div>
       }
