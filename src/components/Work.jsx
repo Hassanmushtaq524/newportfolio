@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import linkedInIcon from "../assets/img/linkedin.svg";
 import githubIcon from "../assets/img/github.svg";
 import gsap from 'gsap';
@@ -21,7 +21,10 @@ const Work = ({ setCursorText, ...rest }) => {
   const overlayRef = useRef();
   
 
-  useEffect(() => {
+  /**
+   * Overlay animation
+   */
+  useLayoutEffect(() => {
     if (!overlayRef.current) return;
 
     gsap.from(overlayRef.current, {
@@ -32,6 +35,9 @@ const Work = ({ setCursorText, ...rest }) => {
   }, [selected])
 
 
+  /**
+   * What happens when u click on overlay 
+   */
   const handleOverlayClick = (e) => {
     setSelected(false); 
     setSelectedIdx();
@@ -56,7 +62,6 @@ const Work = ({ setCursorText, ...rest }) => {
               onClick={() => window.location.href = 'https://github.com/HassanMushtaq524'} 
               alt="github" />
       </div>
-      {/* TODO: add overlay of the selected work */}
       {/* work images */}
       <div className="max-w-[56rem] h-screen flex flex-wrap gap-4 overflow-y-scroll scrollbar-hidden pt-32">
         {workList.map((x, i) => {
@@ -70,6 +75,7 @@ const Work = ({ setCursorText, ...rest }) => {
           );
         })}
       </div>
+      {/* Overlay */}
       { selected && 
         <div ref={overlayRef} className="absolute top-0 left-0 size-full backdrop-blur-lg flex-center text-secondary" onClick={handleOverlayClick}>
           <div className="size-[50rem] bg-primary border-secondary border-[0.5px] text-start p-4 gap-16 overflow-scroll scrollbar-hidden">
@@ -88,12 +94,12 @@ const Work = ({ setCursorText, ...rest }) => {
                     </div>
                   }
                   {x.hasOwnProperty('img') &&
-                    <div key={i} className='overflow-hidden w-[85%] border-[0.5px] border-secondary mt-16'>
+                    <div key={i} className='overflow-hidden border-[0.5px] border-secondary mt-16 w-full'>
                       <img src={x.img} className="object-cover w-full"/>
                     </div>
                   }
                   {x.hasOwnProperty('vid') &&
-                    <div key={i} className='overflow-hidden w-[85%] border-[0.5px] border-secondary mt-16'>
+                    <div key={i} className='overflow-hidden border-[0.5px] border-secondary mt-16 w-full'>
                       <video src={x.vid} autoPlay loop muted className="object-cover w-full"/>
                     </div>
                   }

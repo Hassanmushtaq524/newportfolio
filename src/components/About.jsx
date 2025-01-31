@@ -157,20 +157,16 @@ const About = () => {
           {/* main text */}
           <div className='md:col-start-4 md:col-span-3 md:row-span-2 text-end'>
             <h3 className="text-lg font-bold text-secondary">HELLO!</h3>
-            <p className='text-sm font-thin text-secondary'>Nam libero tempore, cum soluta nobis est eligendi 
-               optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, 
-               omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut 
-               officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. 
-               Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut 
-               perferendis doloribus asperiores repellat.</p>
+            <p className='text-sm font-thin text-secondary'>I am a junior at Ohio Wesleyan University, majoring in Computer Science and minoring in Fine Arts Studio and Mathematics. I am passionate and committed to combining my expertise in technology and design. I have experience in frontend and backend development, graphic design, brand identity, and UI/UX design. 
+            Lately, I've been deepening my skills in frontend development, focusing on web animation and interactive experiences to create more engaging and dynamic user interfaces. I love working on personal projects and am always exploring new possibilities.</p>
           </div>
           <div className='md:col-start-4 md:col-span-3 md:row-span-2 text-end'>
             <h3 className="text-lg font-bold text-secondary">EXPERTISE</h3>
             <p className='text-sm font-thin text-secondary'>
-              Frontend Design / <br/>
-              Frontend Development / <br/>
-              API Development / <br/>
+              Frontend Design/Development / <br/>
+              Backend/API Development / <br/>
               UI/UX /<br/>
+              Brand Design /<br/>
               Graphic Design /<br/>
             </p>
           </div>

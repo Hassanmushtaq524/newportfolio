@@ -9,7 +9,7 @@ import logo from "../assets/img/logo.svg";
 const items = [
   { href: "/work", text: "MY WORK", openText: "CHECK OUT MY WORK" },
   { href: "/about", text: "ABOUT ME", openText: "LEARN MORE ABOUT ME" },
-  { href: "/contact", text: "CONTACT ME", openText: "ASK ME ANY QUESTIONS" },
+  { href: "mailto:hhmushtaq@owu.edu", text: "CONTACT ME", openText: "ASK ME ANY QUESTIONS" },
 ];
 
 
@@ -78,6 +78,11 @@ const Navbar = () => {
      * PAGE TRANSITION
      */
     const handleClick = (href) => {
+        if (href.startsWith('mailto:')) {
+            window.location.href = href;
+            return;
+        }
+    
         if (!transitionRef.current) return;
 
         const height = transitionRef.current.getBoundingClientRect().height;

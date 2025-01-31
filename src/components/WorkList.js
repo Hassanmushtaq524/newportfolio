@@ -1,7 +1,8 @@
 /**
  * Images
  */
-import longlegsImg from "../assets/img/work-img-longlegs.jpg";
+import longlegsCoverImg from "../assets/img/longlegs-coverimg.jpg";
+import longlegsimg1 from "../assets/img/longlegs-img-1.jpg";
 import thiswebsiteCoverImg from "../assets/img/thiswebsite-coverimg.jpg";
 import thiswebsiteVid1 from "../assets/videos/thiswebsite-vid-1.mp4";
 import thiswebsiteVid2 from "../assets/videos/thiswebsite-vid-2.mp4";
@@ -15,9 +16,21 @@ import zentryCoverImg from "../assets/img/zentry-coverimg.jpg";
 import zentryVid1 from "../assets/videos/zentry-vid-1.mp4";
 import zentryVid2 from "../assets/videos/zentry-vid-2.mp4";
 import amanahCoverImg from "../assets/img/amanah-coverimg.jpg";
-import coffeeologyCoverImg from "../assets/img/coffeeology-coverimg.jpg";
-
-
+import amanahImg1 from "../assets/img/amanah-img-1.jpg";
+import amanahImg2 from "../assets/img/amanah-img-2.jpg";
+import amanahImg3 from "../assets/img/amanah-img-3.jpg";
+import amanahImg4 from "../assets/img/amanah-img-4.jpg";
+import amanahImg5 from "../assets/img/amanah-img-5.jpg";
+import amanahImg6 from "../assets/img/amanah-img-6.jpg";
+import amanahImg7 from "../assets/img/amanah-img-7.jpg";
+import amanahImg8 from "../assets/img/amanah-img-8.jpg";
+import amanahImg9 from "../assets/img/amanah-img-9.jpg";
+import amanahImg10 from "../assets/img/amanah-img-10.jpg";
+import amanahImg11 from "../assets/img/amanah-img-11.jpg";
+import amanahImg12 from "../assets/img/amanah-img-12.jpg";
+import mementoCoverImg from "../assets/img/memento-coverimg.jpg";
+import mementoImg1 from "../assets/img/memento-img-1.jpg";
+import mementoImg2 from "../assets/img/memento-img-2.jpg";
 
 
 const workList = [
@@ -52,66 +65,56 @@ const workList = [
       title: "FRONTEND: ZENTRY REMAKE",
       coverImg: zentryCoverImg,
       layout: [
-        { desc: ""},
+        { el: <a className="underline cursor-pointer" onClick={() => window.location.href = 'https://zentry-remake.netlify.app/'}>Website</a> },
+        { el: <a className="underline cursor-pointer" onClick={() => window.location.href = 'https://github.com/HassanMushtaq524/zentry-remake/'}>Source Code</a> },
+        { desc: "I noticed a website on Awwwards that caught my attention. It was a beautiful website for a game called 'Zentry'. It contained some interesting animations that I wanted to implement from scratch by myself to understand GSAP and TailwindCSS in-depth. "},
         { vid: zentryVid1 },
-        { desc: ""},
+        { desc: "This effect of entering a video on the original website seemed complex at first. After trying to understand it, it was still complex. The key to creating this animation was three videos! 1 video to pop up during the hover, 1 for the background, and 1 to create the effect of entering the video by increasing the width to a 100%."},
         { vid: zentryVid2 },
-      ]
-    },
-    {
-      title: "FRONTEND DESIGN: JOJI WEBSITE REDESIGN",
-      coverImg: null,
-      layout: [
-        { desc: ""},
-        { img: null },
+        { desc: "This animation helped me understand pinning, and setting start/end times, and how scrubbing can be done to create an interesting 'entering' effect." },
+        { desc: "Other simple micro-animations were a mix of react-use hooks, GSAP, and TailwindCSS. For instance, the navbar exitting and re-entering on scrolling up was done by capturing the current y-axis value of the scroll, to detect change in direction." },
+        { desc: "Alot of the things I learned from this project were utilized in this website!" },
+        { desc: "THANK YOU FOR YOUR TIME!" },
       ]
     },
     {
       title: "LAYOUT DESIGN: AMANAH OUTSIDERS",
       coverImg: amanahCoverImg,
       layout: [
-        { desc: ""},
-        { img: null },
+        { desc: "I partnered with FRINGE22 to create a brand guideline book for the non-profit organization called Amanah Outsiders. I was handed brand assets and laid out the assets into a cohesive and informative brand guideline book for the organization."},
+        { desc: "The main challenge in this process was working with the brand's many different patterns and logo variations. I also had to think about the typography sizes and create a system that would be visually appealing on, for instance, a website. The brand has this collage/cutout aesthetic that I reflected in how the brand guideline book is laid out. "},
+        { desc: "Overall, this was a fun project that gave me a better understanding of type systems, layout grids, and color combinations. "},
+        { img: amanahImg1 },
+        { img: amanahImg2 },
+        { img: amanahImg3 },
+        { img: amanahImg4 },
+        { img: amanahImg5 },
+        { img: amanahImg6 },
+        { img: amanahImg7 },
+        { img: amanahImg8 },
+        { img: amanahImg9 },
+        { img: amanahImg10 },
+        { img: amanahImg11 },
+        { img: amanahImg12 }
       ]
     },
     {
-      title: "RESEARCH: TRAFFIC MODELING",
-      coverImg: null,
+      title: "MOVIE POSTER: MEMENTO",
+      coverImg: mementoCoverImg,
       layout: [
-        { desc: ""},
-        { img: null },
-      ]
-    },
-    {
-      title: "BRANDING: COFFEEOLOGY",
-      coverImg: coffeeologyCoverImg,
-      layout: [
-        { desc: ""},
-        { img: null },
+        { desc: "Memento is one of my favorite Christopher Nolan movies because it runs backward in a way. The idea of time and polaroids play a huge role in the movie, so I wanted to reflect that through the design. The entire poster mimics the look of a Polaroid and the bleeding text is reminiscent of the marker the main character uses to note down people's characteristics. "},
+        { desc: "I used mainly Photoshop and a color bleed action that I created myself. The image's texture brings out the feeling of the passage of time and a Polaroid." },
+        { img: mementoImg1 },
+        { img: mementoImg2 }
       ]
     },
     {
       title: "MOVIE POSTER: LONGLEGS",
-      coverImg: longlegsImg,
+      coverImg: longlegsCoverImg,
       layout: [
-        { desc: ""},
-        { img: null },
-      ]
-    },
-    {
-      title: "MOVIE POSTER: YI YI",
-      coverImg: longlegsImg,
-      layout: [
-        { desc: ""},
-        { img: null },
-      ]
-    },
-    {
-      title: "TSHIRT DESIGNS: PERSONAL",
-      coverImg: longlegsImg,
-      layout: [
-        { desc: ""},
-        { img: null },
+        { desc: "Longlegs' official branding is interesting to me. The sharp contrast between the bright red and deep darkness creates an interesting image that fits the movie. I wanted to continue the branding and changing it did not feel right in this case. "},
+        { desc: "I used a basic Helvetica font and contrasting font sizes, similar to Swiss typographic ideas. The plastic wrap texture on top of the poster mimics the wrapping of evidence in crime scenes in the movie. " },
+        { img: longlegsimg1 },
       ]
     }
   ]
