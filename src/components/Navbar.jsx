@@ -1,30 +1,31 @@
 import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import gsap from 'gsap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import CurrentDate from './CurrentDate';
 import { useWindowSize } from 'react-use';
 import logo from "../assets/img/logo.svg";
 
 
+
 const items = [
   { href: "/work", text: "MY WORK", openText: "CHECK OUT MY WORK" },
   { href: "/about", text: "ABOUT ME", openText: "LEARN MORE ABOUT ME" },
-  { href: "/contact", text: "CONTACT ME", openText: "ASK ME ANY QUESTIONS" },
+  { href: "mailto:hhmushtaq@owu.edu", text: "CONTACT ME", openText: "ASK ME ANY QUESTIONS" },
 ];
 
 
 
 const Navbar = () => {
     const navRef = useRef(null);
-    const [hoveredItem, setHoveredItem] = useState(null); // Track hovered item
+    const [hoveredItem, setHoveredItem] = useState(null); 
+    const location = useLocation();
+    const [ homePage, setHomePage ] = useState(location.pathname === '/');
     const transitionRef = useRef(null);
     const navigate = useNavigate();
-    const { width: winWidth, height: winHeight } = useWindowSize();
+    const { width: winWidth } = useWindowSize();
     const [burger, setBurger] = useState(false);
     const boxRef = useRef(null);
     const [burgerOpen, setBurgerOpen] = useState(false);
-
-
 
     /**
      * Fade-in effect for the entire navbar.
@@ -78,6 +79,12 @@ const Navbar = () => {
      * PAGE TRANSITION
      */
     const handleClick = (href) => {
+        setHomePage(href === '/')
+        if (href.startsWith('mailto:')) {
+            window.location.href = href;
+            return;
+        }
+    
         if (!transitionRef.current) return;
 
         const height = transitionRef.current.getBoundingClientRect().height;
@@ -132,6 +139,7 @@ const Navbar = () => {
     }, [burger, burgerOpen])
 
 
+
     /**
      * burger nav menu open
      */
@@ -164,7 +172,9 @@ const Navbar = () => {
                     <>
                         <div ref={boxRef}
                             onClick={handleBurgerClick} 
-                            className={`fixed z-50 bottom-0 right-0 bg-secondary size-12`}/>
+                            className={`fixed z-50 ${ (homePage) ? 'top-0' : 'bottom-0' } right-0 bg-secondary size-12 font-bold text-xs text-primary flex-center`}>
+                                MENU
+                        </div>
                         { burgerOpen &&
                         <nav
                             ref={navRef}
@@ -176,6 +186,7 @@ const Navbar = () => {
                                 </a>
                             </div>
                             ))}
+                            <img src={logo} className="w-fit hover:rotate-[-60deg] duration-500" onClick={() => handleClick("/")} alt='logo'/>
                         </nav>
                         }
                     </>
