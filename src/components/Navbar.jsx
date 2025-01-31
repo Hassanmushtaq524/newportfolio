@@ -27,6 +27,8 @@ const Navbar = () => {
     const boxRef = useRef(null);
     const [burgerOpen, setBurgerOpen] = useState(false);
 
+
+    
     /**
      * Fade-in effect for the entire navbar.
      */
