@@ -37,13 +37,18 @@ const skills = [
  * FAQs list
  */
 const FAQs = [
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHERE DO I SEE MYSELF IN 10 YEARS?", answer: "Idk"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"},
-  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I am able to remain creative and design some cool stuff!"}
+  { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I can remain creative and design cool stuff!" },
+  { question: "WHERE DO I SEE MYSELF IN 10 YEARS?", answer: "I see myself continuing to grow as a designer and developer, creating amazing user experiences. I also see myself being financially secure." },
+  { question: "WHAT ARE MY PASSIONS?", answer: "I'm passionate about design, technology, and finding innovative solutions to problems." },
+  { question: "WHAT DRIVES MY WORK?", answer: "The challenge of creating something new and impactful drives me." },
+  { question: "WHAT SKILLS AM I DEVELOPING?", answer: "I'm focused on growing my skills in frontend development/design and creating eye-catching UI." },
+  { question: "WHAT IS MY FAVORITE TOOL?", answer: "I love working with Figma for design and React.js for frontend development." },
+  { question: "HOW DO I STAY MOTIVATED?", answer: "I stay motivated by working on projects that push my boundaries and learning something new every day." },
+  { question: "WHAT IS MY WORK STYLE?", answer: "I'm a collaborative team player but also enjoy deep focus time when working on complex problems." },
+  { question: "WHAT INSPIRES MY DESIGN?", answer: "I draw inspiration from modern design trends, nature, and user-centered design principles. My favorite website to browse through right now is Awwwards." },
+  { question: "WHY AM I PASSIONATE ABOUT FRONTEND DEVELOPMENT?", answer: "I love how frontend development combines creativity and technology!" }
 ]
+
 
 
 
@@ -53,7 +58,7 @@ const FAQs = [
 const imgs = [ img1, img2, img3, img4, img5, img6 ];
 
 
-const About = () => {
+const About = ({ mobileView, ...rest }) => {
   const imgRef = useRef(null);
   const [scrollingImg, setScrollingImg] = useState(false);
   const [prevY, setPrevY] = useState(0);
@@ -64,6 +69,7 @@ const About = () => {
    * Scrolling listener on the about page
    */
   useEffect(() => {
+    if (mobileView) return;
     const container = document.querySelector("#about") || window;
     function handleScroll() {
       setScrollY(container.scrollTop || window.scrollY);
@@ -99,6 +105,8 @@ const About = () => {
    * Img pinning 
    */
   useLayoutEffect(() => {
+    if (!document.querySelector("#reel-img")) return;
+
     const ctx = gsap.context(() => {
       const { height: h, y: y }  = document.querySelector("#reel").getBoundingClientRect();
       const tl = gsap.timeline({
@@ -203,20 +211,20 @@ const About = () => {
         </section>  
 
         {/* REEL */}
-        <section id="reel" className='w-screen px-[24px] py-32 md:pe-28 text-end flex flex-row items-start justify-center gap-8 md:gap-24'>
+        <section id="reel" className='w-screen px-[24px] py-32 md:pe-28 text-end flex flex-row items-start justify-center gap-4 md:gap-32'>
             {/* FAQs */}
             <div id="faq" className="flex flex-col gap-44">
               {FAQs.map((x, i) => (
-                <div className="">
+                <div className="w-full md:w-[25rem]">
                     <h3 className="text-lg font-bold text-secondary mb-2">{x.question}</h3>
                     <p className='text-sm font-thin text-secondary'>{x.answer}</p>
                 </div>
               ))}
             </div>
             {/* img */}
-            <div id="reel-img" className='md:relative w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
+            {!mobileView && <div id="reel-img" className='md:relative w-[10rem] h-[12rem] md:w-[24rem] md:h-[32rem] border-[0.5px] border-secondary overflow-hidden'>
               <img src={imgs[imgIdx]} alt="reel-img" className="object-cover w-full h-full" />
-            </div>
+            </div>}
         </section>
 
         {/* ENDING FOOTER */}

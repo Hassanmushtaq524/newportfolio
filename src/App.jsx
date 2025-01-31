@@ -47,7 +47,7 @@ function App() {
       <Routes>
         <Route index element={<Home/>}/>
         <Route path='/work' element={<Work setCursorText={setInnerText}/>}/>
-        <Route path='/about' element={<About/>}/>
+        <Route path='/about' element={<About mobileView={mobileView}/>}/>
       </Routes>
     </div>
   );
