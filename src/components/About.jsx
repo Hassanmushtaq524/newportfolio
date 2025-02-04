@@ -38,11 +38,11 @@ const skills = [
  */
 const FAQs = [
   { question: "WHAT IS MY DREAM JOB?", answer: "Somewhere where I can remain creative and design cool stuff!" },
-  { question: "WHERE DO I SEE MYSELF IN 10 YEARS?", answer: "I see myself continuing to grow as a designer and developer, creating amazing user experiences. I also see myself being financially secure." },
+  { question: "WHERE DO I SEE MYSELF IN 10 YEARS?", answer: "I see myself continuing to grow as a designer and developer, creating amazing user experiences." },
   { question: "WHAT ARE MY PASSIONS?", answer: "I'm passionate about design, technology, and finding innovative solutions to problems." },
   { question: "WHAT DRIVES MY WORK?", answer: "The challenge of creating something new and impactful drives me." },
   { question: "WHAT SKILLS AM I DEVELOPING?", answer: "I'm focused on growing my skills in frontend development/design and creating eye-catching UI." },
-  { question: "WHAT IS MY FAVORITE TOOL?", answer: "I love working with Figma for design and React.js for frontend development." },
+  { question: "WHAT IS MY FAVORITE TOOL?", answer: "I love working with Figma for design and React.js for frontend development. Currently, I am loving working with GSAP!" },
   { question: "HOW DO I STAY MOTIVATED?", answer: "I stay motivated by working on projects that push my boundaries and learning something new every day." },
   { question: "WHAT IS MY WORK STYLE?", answer: "I'm a collaborative team player but also enjoy deep focus time when working on complex problems." },
   { question: "WHAT INSPIRES MY DESIGN?", answer: "I draw inspiration from modern design trends, nature, and user-centered design principles. My favorite website to browse through right now is Awwwards." },
@@ -178,21 +178,31 @@ const About = ({ mobileView, ...rest }) => {
               Graphic Design /<br/>
             </p>
           </div>
-          <div className='md:col-start-5 md:col-span-1 md:row-span-2 text-end'>
+          <div className='md:col-start-4 md:col-span-1 md:row-span-2 text-end'>
             <h3 className="text-lg font-bold text-secondary">HOBBIES</h3>
             <p className='text-sm font-thin text-secondary'>
               Designing Posters / <br/> 
               Watching Anime / <br/> 
               Learning web animation / <br/> 
               Gaming ~ Valorant/CS /<br/>
+              Drawing ~ Sketching /<br/>
+            </p>
+          </div>
+          <div className='md:col-start-5 md:col-span-1 md:row-span-2 text-end'>
+            <h3 className="text-lg font-bold text-secondary">FAV PLACES</h3>
+            <p className='text-sm font-thin text-secondary'>
+              NYC / <br/> 
+              Boston / <br/> 
+              Lahore /<br/>  
             </p>
           </div>
           <div className='md:col-start-6 md:col-span-1 md:row-span-2 text-end'>
-            <h3 className="text-lg font-bold text-secondary">FAV PLACES</h3>
+            <h3 className="text-lg font-bold text-secondary">CURRENT INSPIRATIONS</h3>
             <p className='text-sm font-thin text-secondary'>
-              NYC! / <br/> 
-              Boston / <br/> 
-              Lahore /<br/> 
+              Jesse Nyberg / <br/> 
+              Cj Cawley / <br/> 
+              The Awwwards Website /<br/> 
+              Browsing Pinterest! /<br/> 
             </p>
           </div>
         </section>

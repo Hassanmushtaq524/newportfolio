@@ -39,8 +39,15 @@ const Work = ({ setCursorText, ...rest }) => {
    * What happens when u click on overlay 
    */
   const handleOverlayClick = (e) => {
-    setSelected(false); 
-    setSelectedIdx();
+    gsap.to(overlayRef.current, {
+      opacity: 0,
+      duration: 0.7,
+      onComplete: () => {
+        setSelected(false); 
+        setSelectedIdx(null);
+      }
+    })
+   
   }
 
 
@@ -78,7 +85,7 @@ const Work = ({ setCursorText, ...rest }) => {
       {/* Overlay */}
       { selected && 
         <div ref={overlayRef} className="absolute top-0 left-0 size-full backdrop-blur-lg flex-center text-secondary" onClick={handleOverlayClick}>
-          <div className="size-[50rem] bg-primary border-secondary border-[0.5px] text-start p-4 gap-16 overflow-scroll scrollbar-hidden">
+          <div className="size-[40rem] md:size-[50rem] bg-primary border-secondary border-[0.5px] text-start p-4 gap-16 overflow-scroll scrollbar-hidden">
             <h2 className="font-bold text-lg">{workList[selectedIdx].title}</h2>
             {workList[selectedIdx].layout.map((x, i) => {
                 return (
