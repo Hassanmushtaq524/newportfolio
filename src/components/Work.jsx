@@ -89,28 +89,28 @@ const Work = ({ setCursorText, ...rest }) => {
             <h2 className="font-bold text-lg">{workList[selectedIdx].title}</h2>
             {workList[selectedIdx].layout.map((x, i) => {
                 return (
-                  <>
-                  {x.hasOwnProperty('desc') &&
-                    <div key={i} className='text-sm font-thin mt-16'>
-                      {x.desc}
-                    </div>
-                  }
-                  {x.hasOwnProperty('el') &&
-                    <div key={i} className='text-sm font-thin mt-16'>
-                      {x.el}
-                    </div>
-                  }
-                  {x.hasOwnProperty('img') &&
-                    <div key={i} className='overflow-hidden border-[0.5px] border-secondary mt-16 w-full'>
-                      <img src={x.img} className="object-cover w-full"/>
-                    </div>
-                  }
-                  {x.hasOwnProperty('vid') &&
-                    <div key={i} className='overflow-hidden border-[0.5px] border-secondary mt-16 w-full'>
-                      <video src={x.vid} autoPlay loop muted className="object-cover w-full"/>
-                    </div>
-                  }
-                  </>
+                  <div key={i}>
+                    {x.hasOwnProperty('desc') &&
+                      <div className='text-sm font-thin mt-16'>
+                        {x.desc}
+                      </div>
+                    }
+                    {x.hasOwnProperty('el') &&
+                      <div className='text-sm font-thin mt-16'>
+                        {x.el}
+                      </div>
+                    }
+                    {x.hasOwnProperty('img') &&
+                      <div className='overflow-hidden border-[0.5px] border-secondary mt-16 w-full'>
+                        <img src={x.img} className="object-cover w-full pointer-events-none"/>
+                      </div>
+                    }
+                    {x.hasOwnProperty('vid') &&
+                      <div className='overflow-hidden border-[0.5px] border-secondary mt-16 w-full'>
+                        <video src={x.vid} autoPlay loop muted className="object-cover w-full pointer-events-none"/>
+                      </div>
+                    }
+                  </div>
                 )
               })
             }

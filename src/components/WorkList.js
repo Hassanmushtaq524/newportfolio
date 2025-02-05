@@ -4,8 +4,8 @@
 import longlegsCoverImg from "../assets/img/longlegs-coverimg.jpg";
 import longlegsimg1 from "../assets/img/longlegs-img-1.jpg";
 import thiswebsiteCoverImg from "../assets/img/thiswebsite-coverimg.jpg";
-import thiswebsiteVid1 from "../assets/videos/thiswebsite-vid-1.mp4";
-import thiswebsiteVid2 from "../assets/videos/thiswebsite-vid-2.mp4";
+import thiswebsiteVid1 from "../assets/videos/thiswebsite-vid-1.webp";
+import thiswebsiteVid2 from "../assets/videos/thiswebsite-vid-2.webp";
 import animeforumCoverImg from "../assets/img/animeforum-coverimg.jpg";
 import animeforumImg1 from "../assets/img/animeforum-img-1.jpg";
 import animeforumImg2 from "../assets/img/animeforum-img-2.jpg";
@@ -13,8 +13,8 @@ import animeforumImg3 from "../assets/img/animeforum-img-3.jpg";
 import animeforumImg4 from "../assets/img/animeforum-img-4.jpg";
 import animeforumImg5 from "../assets/img/animeforum-img-5.jpg";
 import zentryCoverImg from "../assets/img/zentry-coverimg.jpg";
-import zentryVid1 from "../assets/videos/zentry-vid-1.mp4";
-import zentryVid2 from "../assets/videos/zentry-vid-2.mp4";
+import zentryVid1 from "../assets/videos/zentry-vid-1.webp";
+import zentryVid2 from "../assets/videos/zentry-vid-2.webp";
 import amanahCoverImg from "../assets/img/amanah-coverimg.jpg";
 import amanahImg1 from "../assets/img/amanah-img-1.jpg";
 import amanahImg2 from "../assets/img/amanah-img-2.jpg";
@@ -40,9 +40,9 @@ const workList = [
       layout: [
         { desc: "This website was 4 weeks in the making, and I utilized REACT, GSAP, and TAILWINDCSS to create a responsive, and clean UI. I initially designed the website in Figma, and focused a lot on micro animations."},
         { el: <a className="underline cursor-pointer" onClick={() => window.location.href = 'https://github.com/Hassanmushtaq524/newportfolio/'}>Source Code</a> },
-        { vid: thiswebsiteVid1 },
+        { img: thiswebsiteVid1 },
         { desc: "This animation required a lot of planning, and initially did not work very well because of the difference in rotation of the two texts. I found that if you initially rotated the text -90deg, and then removed it on hover, it worked way better!"},
-        { vid: thiswebsiteVid2 },
+        { img: thiswebsiteVid2 },
         { desc: "Another fun part to utilize GSAP on was the scroll trigger reel on the about page. I used the current scroll position and also gsap pinning to create a nice reel of me and my life as you scroll through FAQs"},
         { desc: "There are other micro animations I created using just tailwindCSS. For example, the icons and cards rotate -60deg on hover. It was also interesting to utilize javascript handlers, such as mousemove, to create a following cursor square"},
         { desc: "HAVE FUN EXPLORING OTHER PROJECTS!"},
@@ -68,9 +68,9 @@ const workList = [
         { el: <a className="underline cursor-pointer" onClick={() => window.location.href = 'https://zentry-remake.netlify.app/'}>Website</a> },
         { el: <a className="underline cursor-pointer" onClick={() => window.location.href = 'https://github.com/HassanMushtaq524/zentry-remake/'}>Source Code</a> },
         { desc: "I noticed a website on Awwwards that caught my attention. It was a beautiful website for a game called 'Zentry'. It contained some interesting animations that I wanted to implement from scratch by myself to understand GSAP and TailwindCSS in-depth. "},
-        { vid: zentryVid1 },
+        { img: zentryVid1 },
         { desc: "This effect of entering a video on the original website seemed complex at first. After trying to understand it, it was still complex. The key to creating this animation was three videos! 1 video to pop up during the hover, 1 for the background, and 1 to create the effect of entering the video by increasing the width to a 100%."},
-        { vid: zentryVid2 },
+        { img: zentryVid2 },
         { desc: "This animation helped me understand pinning, and setting start/end times, and how scrubbing can be done to create an interesting 'entering' effect." },
         { desc: "Other simple micro-animations were a mix of react-use hooks, GSAP, and TailwindCSS. For instance, the navbar exitting and re-entering on scrolling up was done by capturing the current y-axis value of the scroll, to detect change in direction." },
         { desc: "Alot of the things I learned from this project were utilized in this website!" },

@@ -5,6 +5,8 @@ import CurrentDate from './CurrentDate';
 import linkedInIcon from '../assets/img/linkedin.svg';
 import githubIcon from '../assets/img/github.svg';
 import { useNavigate } from 'react-router-dom';
+import myImg from "../assets/img/MyImg.png";
+
 
 const Home = () => {
     const mainTitleRef = useRef(null);
@@ -99,7 +101,7 @@ const Home = () => {
              
             {/* img */}
             <div ref={mainImgRef} className="absolute -bottom-8 left-1/8 lg:size-[50rem] md:size-[40rem] size-[30rem] overflow-hidden">
-                <img src="../assets/img/MyImg.png"  alt="my-img" className="size-fit object-cover"/>
+                <img src={myImg}  alt="my-img" className="size-fit object-cover"/>
             </div>
                
 
