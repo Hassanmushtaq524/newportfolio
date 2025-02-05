@@ -99,7 +99,7 @@ const Home = () => {
              
             {/* img */}
             <div ref={mainImgRef} className="absolute -bottom-8 left-1/8 lg:size-[50rem] md:size-[40rem] size-[30rem] overflow-hidden">
-                <img src={require('../assets/img/MyImg.png')} alt="my-img" className="size-fit object-cover"/>
+                <img src="../assets/img/MyImg.png"  alt="my-img" className="size-fit object-cover"/>
             </div>
                
 
