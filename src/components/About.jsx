@@ -165,7 +165,7 @@ const About = ({ mobileView, ...rest }) => {
           {/* main text */}
           <div className='md:col-start-4 md:col-span-3 md:row-span-2 text-end'>
             <h3 className="text-lg font-bold text-secondary">HELLO!</h3>
-            <p className='text-sm font-thin text-secondary'>I am a junior at Ohio Wesleyan University, majoring in Computer Science and minoring in Fine Arts Studio and Mathematics. I am passionate and committed to combining my expertise in technology and design. I have experience in frontend and backend development, graphic design, brand identity, and UI/UX design. 
+            <p className='text-sm font-thin text-secondary'>I am a senior at Ohio Wesleyan University, majoring in Computer Science and minoring in Fine Arts Studio and Mathematics. I am passionate and committed to combining my expertise in technology and design. I have experience in frontend and backend development, graphic design, brand identity, and UI/UX design. 
             Lately, I've been deepening my skills in frontend development, focusing on web animation and interactive experiences to create more engaging and dynamic user interfaces. I love working on personal projects and am always exploring new possibilities.</p>
           </div>
           <div className='md:col-start-4 md:col-span-3 md:row-span-2 text-end'>
@@ -200,7 +200,6 @@ const About = ({ mobileView, ...rest }) => {
             <h3 className="text-lg font-bold text-secondary">CURRENT INSPIRATIONS</h3>
             <p className='text-sm font-thin text-secondary'>
               Jesse Nyberg / <br/> 
-              Cj Cawley / <br/> 
               The Awwwards Website /<br/> 
               Browsing Pinterest! /<br/> 
             </p>

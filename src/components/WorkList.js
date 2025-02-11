@@ -15,6 +15,9 @@ import animeforumImg5 from "../assets/img/animeforum-img-5.jpg";
 import zentryCoverImg from "../assets/img/zentry-coverimg.jpg";
 import zentryVid1 from "../assets/videos/zentry-vid-1.webp";
 import zentryVid2 from "../assets/videos/zentry-vid-2.webp";
+import jojiCoverImg from "../assets/img/joji-coverimg.jpg";
+import jojiImg1 from "../assets/img/joji-img-1.jpg";
+import jojiImg2 from "../assets/img/joji-img-2.jpg";
 import amanahCoverImg from "../assets/img/amanah-coverimg.jpg";
 import amanahImg1 from "../assets/img/amanah-img-1.jpg";
 import amanahImg2 from "../assets/img/amanah-img-2.jpg";
@@ -60,6 +63,17 @@ const workList = [
         { img: animeforumImg4 },
         { img: animeforumImg5 },
       ]
+    },
+    {
+      title: "JOJI WEBSITE REDESIGN",
+      coverImg: jojiCoverImg,
+      layout: [
+        { desc: "I redesigned a website dedicated to Joji using Figma, creating a sleek, modern interface that mirrors his unique artistic vibe. With immersive visuals and intuitive navigation, the design captures the moody essence of his music. I'm now transitioning from design to development, working to bring this interactive experience to life" },
+        { img: jojiCoverImg },
+        { img: jojiImg1 },
+        { img: jojiImg2 }
+      ]
+      
     },
     {
       title: "FRONTEND: ZENTRY REMAKE",
